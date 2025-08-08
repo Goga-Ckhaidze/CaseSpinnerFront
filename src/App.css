@@ -258,8 +258,8 @@ body {
   display: flex;
   align-items: center;
     clip-path: polygon(
-    15px 0%,         /* top-left inward */
-    calc(100% - 15px) 0%,   /* top-right inward */
+    15px 0%,  
+    calc(100% - 15px) 0%,  
     100% 10px,
     100% calc(100% - 15px),
     calc(100% - 10px) 100%,
@@ -305,7 +305,6 @@ body {
   background: linear-gradient(to right, rgba(255, 255, 255, 0.15), transparent);
 }
 
-/* RIGHT gradient: transparent to white */
 .edgeRight {
   right: 0;
   background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
@@ -313,4 +312,125 @@ body {
 
 .eventButton {
   margin-top: 50px;
+}
+
+.caseFlex {
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.w_20 {
+  width: 19%;
+  position: relative;
+}
+
+.caseTitle {
+  color: white;
+  text-align: center;
+  padding: 25px 0;
+}
+
+.caseImage {
+  width: 100%;
+  height: auto;
+}
+
+.background {
+  width: 100%;
+  height: auto;
+}
+
+.footerTitles {
+  color: white;
+}
+
+.footer {
+  background-color: black;
+  border-top: 1px solid white;
+  margin-top: 100px;
+  padding: 50px 0px 0px 0px;
+}
+
+.container-1800-2 {
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.footerFlex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.h1 {
+  display: inline-block;
+  color: white;
+}
+
+.footerLogo {
+  width: 100px;
+  height: auto;
+}
+
+.w-25-2 {
+  width: 25%;
+  text-align: right;
+}
+
+.logoDivv {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.i {
+  display: inline-block;
+  margin-top: 25px;
+}
+
+.z {
+    text-align: left;
+}
+
+.footerText {
+  color: gray;
+  padding-top: 10px;
+}
+
+.pt {
+  padding-top: 15px;
+}
+
+.lineDivv {
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  margin-top: 50px;
+}
+
+.middleLine {
+  width: 50px;
+  background-color: black;
+  height: 1px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.copyright {
+  color: gray;
+}
+
+.container-1800-3 {
+  max-width: 1800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+.price {
+  color: white;
+  padding: 25px 0 10px 0;
 }
