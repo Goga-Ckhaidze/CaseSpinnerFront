@@ -54,6 +54,7 @@ body {
 .logo {
   width: 150px;
   height: 100px;
+  cursor: pointer;
 }
 
 .logoTitle {
@@ -61,8 +62,9 @@ body {
   align-items: center;
   padding-left: 20px;
   color: white;
-  font-size: 35px;
+  font-size: 25px;
   gap: 10px;
+  cursor: pointer;
 }
 
 
@@ -83,7 +85,7 @@ body {
 }
 
 .headerIcon1 {
-  font-size: 50px;
+  font-size: 30px;
   padding: 0;
   margin: 0;
 }
@@ -91,7 +93,7 @@ body {
 .headerIcon2 {
   animation: pulseGlow 3s ease-in-out infinite;
   transition: transform 0.2s, color 0.2s;
-  font-size: 50px; /* or any size you want */
+  font-size: 30px;
 }
 
 .headerFlex {
@@ -106,36 +108,30 @@ body {
 .headerIcon1 {
   animation: pulseGlow 3s ease-in-out infinite;
   transition: transform 0.2s, color 0.2s;
-  font-size: 50px;
+  font-size: 30px;
 }
 
 @keyframes pulseGlow {
   0% {
     transform: scale(1);
-    color: white;
   }
   50% {
     transform: scale(1.2);
-    color: #2a2a2a; 
   }
   100% {
     transform: scale(1);
-    color: white;
   }
 }
 
 @keyframes spinColorCycle  {
   0% {
     transform: rotate(0deg);
-    color: white;
   }
   50% {
     transform: rotate(180deg);
-    color: #2a2a2a;
   }
   100% {
     transform: rotate(360deg);
-    color: white;
   }
 }
 
@@ -146,6 +142,7 @@ body {
   width: 50px;
   height: 50px;
   margin-right: 10px;
+  color: white;
 }
 
 .right {
