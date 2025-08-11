@@ -1,9 +1,12 @@
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube, FaTiktok, FaDiscord, FaPeopleArrows, FaBoxOpen } from "react-icons/fa";
 import { GiUpgrade } from 'react-icons/gi';
 import { Settings } from 'lucide-react';
-import '../App.css';
+import { useNavigate } from "react-router-dom";
+import './MainPage.css';
 
 function Main() {
+  const navigate = useNavigate();
+
   const cases = [
     { title: "Neon Case", img: "case1.png", price: "15.00$" },
     { title: "Gemstone Case", img: "case3.png", price: "23.99$" },
@@ -20,6 +23,10 @@ function Main() {
     { title: "Ninja Case", img: "case5.png", price: "230.00$" },
     { title: "Cursed Case", img: "case2.png", price: "300.00$" },
   ];
+
+  const handleCaseClick = (caseTitle) => {
+    navigate(`/case/${encodeURIComponent(caseTitle)}`);
+  };
 
   return (
     <>
@@ -97,7 +104,11 @@ function Main() {
         <div className="caseFlex">
           {cases.map((item, i) => (
             <div className="w_20" key={i}>
-              <div className="caseWrapper">
+              <div
+                className="caseWrapper"
+                onClick={() => handleCaseClick(item.title)}
+                style={{ cursor: "pointer" }}
+              >
                 <video
                   src="/images/fire.mp4"
                   className="caseFireVideo"
@@ -106,7 +117,6 @@ function Main() {
                   loop
                   playsInline
                 ></video>
-
                 <span className="edgeLeft"></span>
                 <span className="edgeRight"></span>
                 <h2 className="caseTitle">{item.title}</h2>
@@ -123,7 +133,11 @@ function Main() {
         <div className="caseFlex">
           {secondCases.map((item, i) => (
             <div className="w_20" key={i}>
-              <div className="caseWrapper">
+              <div
+                className="caseWrapper"
+                onClick={() => handleCaseClick(item.title)}
+                style={{ cursor: "pointer" }}
+              >
                 <video
                   src="/images/fire.mp4"
                   className="caseFireVideo"
@@ -132,7 +146,6 @@ function Main() {
                   loop
                   playsInline
                 ></video>
-
                 <span className="edgeLeft"></span>
                 <span className="edgeRight"></span>
                 <h2 className="caseTitle">{item.title}</h2>
@@ -144,9 +157,10 @@ function Main() {
         </div>
       </div>
 
-<div className="padding"></div>
-      {/* Footer (unchanged) */}
-              <div className="lineDivv"><span className="middleLine"></span></div>
+      <div className="padding"></div>
+
+      {/* Footer */}
+      <div className="lineDivv"><span className="middleLine"></span></div>
       <div className="footer">
         <div className="container-1800-2">
           <div className="footerFlex">

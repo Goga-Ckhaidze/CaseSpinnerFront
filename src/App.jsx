@@ -1,15 +1,16 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Main from './pages/Main'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Main from "./pages/Main";
+import CasePage from "./pages/CasePage";
 
 function App() {
-
   return (
-    <BrowserRouter>
-    <Routes>
-      <Route path='/' element={<Main />} />
-    </Routes>
-    </BrowserRouter>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/case/:caseTitle" element={<CasePage />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
