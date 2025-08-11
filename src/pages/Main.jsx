@@ -2,7 +2,15 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube, FaTiktok,
 import { GiUpgrade } from 'react-icons/gi';
 import { Settings } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
-import './MainPage.css';
+import styles from './MainPage.module.css';
+
+function Main() {
+  return (
+    <div className={styles.container}>
+      <h1 className={styles.title}>Hello</h1>
+    </div>
+  );
+}
 
 function Main() {
   const navigate = useNavigate();

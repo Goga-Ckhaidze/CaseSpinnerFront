@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import './CasePage.css';
+import styles from './CasePage.module.css';
 
 function CasePage() {
   const { caseTitle } = useParams();
