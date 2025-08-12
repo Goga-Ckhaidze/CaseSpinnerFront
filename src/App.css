@@ -547,6 +547,9 @@ body {
   display: flex;
   gap: 20px;
   justify-content: center;
+  width: max-content; /* or calculate exact width */
+  will-change: transform;
+  overflow-x: visible; /* No scroll, but clipping controlled by parent */
 }
 
 
@@ -698,4 +701,22 @@ body {
 
 .move {
   margin-top: 50px;
+}
+
+.winner-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
 }
