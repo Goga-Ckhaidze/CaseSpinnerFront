@@ -2,79 +2,34 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube, FaTiktok,
 import { GiUpgrade } from 'react-icons/gi';
 import { Settings } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
-import styles from './MainPage.module.css';
-
-function Main() {
-  return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Hello</h1>
-    </div>
-  );
-}
+import '../App.css';
 
 function Main() {
   const navigate = useNavigate();
 
   const cases = [
-    { title: "Neon Case", img: "case1.png", price: "15.00$" },
-    { title: "Gemstone Case", img: "case3.png", price: "23.99$" },
-    { title: "Plague Case", img: "case4.png", price: "89.50$" },
-    { title: "Ninja Case", img: "case5.png", price: "230.00$" },
-    { title: "Cursed Case", img: "case2.png", price: "300.00$" },
-    ...Array(10).fill({ title: "Unknown Case", img: "case0.png", price: "00.00$" }),
+    { title: "Neon Case", img: "case1.png", price: "15.00$", id: 1 },
+    { title: "Gemstone Case", img: "case3.png", price: "23.99$", id: 2  },
+    { title: "Plague Case", img: "case4.png", price: "89.50$", id: 3 },
+    { title: "Ninja Case", img: "case5.png", price: "230.00$", id: 4  },
+    { title: "Cursed Case", img: "case2.png", price: "300.00$", id: 5  },
+    ...Array(10).fill({ title: "Unknown Case", img: "case0.png", price: "00.00$", id: 0 }),
   ];
 
   const secondCases = [
-    { title: "Neon Case", img: "case1.png", price: "15.00$" },
-    { title: "Gemstone Case", img: "case3.png", price: "23.99$" },
-    { title: "Plague Case", img: "case4.png", price: "89.50$" },
-    { title: "Ninja Case", img: "case5.png", price: "230.00$" },
-    { title: "Cursed Case", img: "case2.png", price: "300.00$" },
+    { title: "Neon Case", img: "case1.png", price: "15.00$", id: 1 },
+    { title: "Gemstone Case", img: "case3.png", price: "23.99$", id: 2  },
+    { title: "Plague Case", img: "case4.png", price: "89.50$", id: 3  },
+    { title: "Ninja Case", img: "case5.png", price: "230.00$", id: 4  },
+    { title: "Cursed Case", img: "case2.png", price: "300.00$", id: 5  },
   ];
 
-  const handleCaseClick = (caseTitle) => {
-    navigate(`/case/${encodeURIComponent(caseTitle)}`);
-  };
+const handleCaseClick = (caseId, caseTitle, casePrice) => {
+  navigate(`/case/${caseId}/${encodeURIComponent(caseTitle)}/${encodeURIComponent(casePrice)}`);
+};
 
   return (
     <>
-      <div className="container-1800">
-        {/* Top Icons */}
-        <div className="topFlex">
-          <div className="w_50">
-            <div className="fiveDiv"></div>
-            <div className="fiveDiv"></div>
-            <div className="fiveDiv"></div>
-            <div className="fiveDiv"></div>
-            <div className="fiveDiv"></div>
-          </div>
-          <div className='w_50 iconsDiv'>
-            <h3 className="icons"><FaFacebookF /></h3>
-            <h3 className="icons"><FaTwitter /></h3>
-            <h3 className="icons"><FaInstagram /></h3>
-            <h3 className="icons"><FaLinkedinIn /></h3>
-            <h3 className="icons"><FaYoutube /></h3>
-            <h3 className="icons"><FaTiktok /></h3>
-            <h3 className="icons"><FaDiscord /></h3>
-            <h3 className="icons lastIcon"><FaPeopleArrows /></h3>
-          </div>
-        </div>
-
-        {/* Header */}
-        <div className="header">
-          <div className="w-50">
-            <img src="/images/logoo.png" alt="Logo" className="logo" />
-            <h1 className="logoTitle"><FaBoxOpen className="headerIcon1" /> CaseSpinner</h1>
-            <h1 className="logoTitle"><GiUpgrade className="headerIcon2" />Upgrade</h1>
-          </div>
-          <div className="w-50 right">
-            <Settings className="spinningGear" />
-            <div className="line"></div>
-            <button className="cut-button">Login</button>
-          </div>
-        </div>
-      </div>
-
       {/* Banner */}
       <div className="banner">
         <img src="/images/banner.avif" alt="banner" className="bannerImage" />
@@ -111,10 +66,11 @@ function Main() {
       <div className="container-1800">
         <div className="caseFlex">
           {cases.map((item, i) => (
+            
             <div className="w_20" key={i}>
               <div
                 className="caseWrapper"
-                onClick={() => handleCaseClick(item.title)}
+                onClick={() => handleCaseClick(item.id, item.title, item.price)}
                 style={{ cursor: "pointer" }}
               >
                 <video
@@ -143,7 +99,7 @@ function Main() {
             <div className="w_20" key={i}>
               <div
                 className="caseWrapper"
-                onClick={() => handleCaseClick(item.title)}
+                onClick={() => handleCaseClick(item.id, item.title, item.price)}
                 style={{ cursor: "pointer" }}
               >
                 <video
@@ -165,48 +121,6 @@ function Main() {
         </div>
       </div>
 
-      <div className="padding"></div>
-
-      {/* Footer */}
-      <div className="lineDivv"><span className="middleLine"></span></div>
-      <div className="footer">
-        <div className="container-1800-2">
-          <div className="footerFlex">
-            <div className="w-25-2 z">
-              <div className="logoDivv">
-                <img src="images/logoo.png" alt="" className="footerLogo" />
-                <h1 className="footerTitles h1">CaseSpinner</h1>
-              </div>
-              <h3 className="icons i"><FaFacebookF /></h3>
-              <h3 className="icons i"><FaTwitter /></h3>
-              <h3 className="icons i"><FaInstagram /></h3>
-              <h3 className="icons i"><FaDiscord /></h3>
-            </div>
-            <div className="w-25-2">
-              <h2 className="footerTitles pt">Navigation</h2>
-              <p className="footerText">Cases</p>
-              <p className="footerText">Upgrader</p>
-              <p className="footerText">Exchanger</p>
-            </div>
-            <div className="w-25-2">
-              <h2 className="footerTitles pt">Information</h2>
-              <p className="footerText">Terms of service</p>
-              <p className="footerText">Privacy policy</p>
-              <p className="footerText">About cases</p>
-            </div>
-            <div className="w-25-2">
-              <h2 className="footerTitles pt">Help</h2>
-              <p className="footerText">Provably Fair</p>
-              <p className="footerText">Take a breack</p>
-              <p className="footerText">Support</p>
-            </div>
-          </div>
-        </div>
-        <div className="lineDivv"><span className="middleLine"></span></div>
-        <div className="container-1800-3">
-          <h2 className="copyright">Copyright © 2025</h2>
-        </div>
-      </div>
     </>
   );
 }
